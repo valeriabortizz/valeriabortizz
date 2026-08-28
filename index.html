@@ -1107,45 +1107,6 @@
   quoteDots.forEach(dot => {
     dot.addEventListener('click', () => showQuote(parseInt(dot.dataset.i, 10)));
   });
-
-  // prosa: nueva línea después de cada coma y de cada punto final de oración
-  (function(){
-    const ABBR = /(?:^|\s)(Sr|Sra|Srta|Dr|Dra|Lic|Prof|Ing|Arq|Cía|Av|etc|vs)\.$/i;
-    const sel = [
-      '.hero-sub', '.about-copy p', '.section-head p', '.format-card p',
-      '.ps-copy p', '.epigraph-card p', '.case-intro p', '.top-posts .sub',
-      '.exec-copy p', '.contact .lead', '.quote-slide p'
-    ].join(', ');
-    function breakTextNode(node){
-      const t = node.nodeValue;
-      if(!t || !/[,.]/.test(t)) return;
-      const frag = document.createDocumentFragment();
-      let buf = '';
-      for(let i = 0; i < t.length; i++){
-        const ch = t[i];
-        buf += ch;
-        if((ch === ',' || ch === '.') && /\s/.test(t[i + 1] || '')){
-          const prev = t[i - 1] || '';
-          const nextNonSpace = (t.slice(i + 1).match(/\S/) || [''])[0];
-          const insideNumber = /\d/.test(prev) && /\d/.test(nextNonSpace);
-          const isAbbrev = ABBR.test(buf);
-          if(!insideNumber && !isAbbrev){
-            let j = i + 1;
-            while(j < t.length && /\s/.test(t[j])) j++;
-            frag.appendChild(document.createTextNode(buf));
-            frag.appendChild(document.createElement('br'));
-            buf = '';
-            i = j - 1;
-          }
-        }
-      }
-      if(buf) frag.appendChild(document.createTextNode(buf));
-      node.parentNode.replaceChild(frag, node);
-    }
-    document.querySelectorAll(sel).forEach(el => {
-      Array.from(el.childNodes).forEach(n => { if(n.nodeType === 3) breakTextNode(n); });
-    });
-  })();
 </script>
 
 <a class="wa-float" href="https://wa.me/5491161199331" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">

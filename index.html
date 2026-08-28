@@ -305,7 +305,7 @@
 
   /* ---------- validation ---------- */
   .validation{background:var(--cream-deep);}
-  .validation .wrap{display:grid;grid-template-columns:1fr 0.55fr;gap:60px;align-items:center;}
+  .validation .wrap{display:grid;grid-template-columns:1fr 0.72fr;gap:48px;align-items:center;}
   .quote-card{
     background:var(--white);
     border-radius:22px;
@@ -425,6 +425,66 @@
   .project-testimonial p{font-family:'Fraunces',serif;font-size:1.12rem;line-height:1.5;color:var(--ink);}
   .pt-attr{margin-top:14px;font-size:.86rem;color:var(--ink-soft);}
   .pt-attr strong{color:var(--ink);font-weight:700;}
+
+  /* ---------- worked-with logos ---------- */
+  .worked-with{width:100%;}
+  .worked-with .badge-label{margin-bottom:14px;display:block;}
+  .worked-with-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .ww-logo{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    height:96px;display:flex;align-items:center;justify-content:center;padding:12px;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .ww-logo:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(38,32,25,0.28);}
+  .ww-logo img{max-height:100%;max-width:100%;width:auto;object-fit:contain;border-radius:6px;}
+  @media (max-width:520px){
+    .worked-with-logos{gap:8px;}
+    .ww-logo{height:76px;padding:9px;}
+  }
+
+  /* ---------- site showcase (interactive preview) ---------- */
+  .project-showcase{display:flex;flex-direction:column;gap:44px;}
+  .ps-item{display:grid;grid-template-columns:1.45fr 1fr;gap:40px;align-items:center;}
+  .ps-item.reverse .site-preview{order:2;}
+  .site-preview{
+    border-radius:16px;overflow:hidden;border:1px solid var(--line);
+    background:var(--white);box-shadow:0 28px 50px -28px rgba(38,32,25,0.32);
+  }
+  .site-bar{
+    display:flex;align-items:center;gap:10px;
+    padding:11px 14px;background:var(--cream-deep);border-bottom:1px solid var(--line);
+  }
+  .site-bar .dots{display:flex;gap:6px;flex-shrink:0;}
+  .site-bar .dots i{width:10px;height:10px;border-radius:50%;background:rgba(38,32,25,0.2);display:block;}
+  .site-url{
+    flex:1;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:100px;
+    font-size:.76rem;color:var(--ink-soft);padding:6px 14px;text-align:center;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .site-expand{
+    flex-shrink:0;width:28px;height:28px;border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--ink-soft);text-decoration:none;
+    transition:background .25s ease,color .25s ease;
+  }
+  .site-expand:hover{background:var(--white);color:var(--rose-deep);}
+  .site-expand svg{width:15px;height:15px;}
+  .site-frame{position:relative;width:100%;aspect-ratio:16/10;background:var(--cream);}
+  .site-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
+  .ps-copy .project-logo{width:54px;height:54px;margin-bottom:16px;}
+  .ps-copy h3{font-size:1.4rem;font-weight:500;margin-bottom:10px;}
+  .ps-copy p{font-size:.96rem;color:var(--ink-soft);line-height:1.6;margin-bottom:16px;}
+  .ps-copy .project-tag{display:block;margin-bottom:16px;}
+  .ps-hint{
+    font-size:.8rem;color:var(--rose-deep);font-weight:600;margin-top:14px;
+    display:flex;align-items:center;gap:7px;
+  }
+  .ps-hint svg{width:15px;height:15px;flex-shrink:0;}
+  @media (max-width:900px){
+    .ps-item{grid-template-columns:1fr;gap:22px;}
+    .ps-item.reverse .site-preview{order:0;}
+    .site-frame{aspect-ratio:4/3;}
+  }
 
   /* ---------- case study ---------- */
   .case{
@@ -720,9 +780,13 @@
         <div class="eyebrow"><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1 L14 10 L23 12 L14 14 L12 23 L10 14 L1 12 L10 10 Z" fill="currentColor"/></svg></span>Validación profesional</div>
         <h2 style="font-size:2rem;">Avalada por quienes trabajaron con ella.</h2>
       </div>
-      <div class="badge">
-        <img src="images/badge-validacion.png" alt="Las Correctoras" width="900" height="355" loading="lazy">
-        <div class="badge-label">Referencia<br>profesional</div>
+      <div class="worked-with">
+        <span class="badge-label">Trabajó con</span>
+        <div class="worked-with-logos">
+          <div class="ww-logo"><img src="images/badge-validacion.png" alt="Las Correctoras" width="900" height="355" loading="lazy"></div>
+          <div class="ww-logo"><img src="images/logo-fp-campos.jpg" alt="FP Campos y Haciendas" width="236" height="420" loading="lazy"></div>
+          <div class="ww-logo"><img src="images/logo-cosmeticos-lanus.png" alt="Cosméticos Lanús" width="300" height="300" loading="lazy"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -763,28 +827,65 @@
     <div class="section-head reveal">
       <div class="eyebrow"><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1 L14 10 L23 12 L14 14 L12 23 L10 14 L1 12 L10 10 Z" fill="currentColor"/></svg></span>Proyectos web</div>
       <h2>Sitios que <span class="rose serif-italic">diseñó y desarrolló.</span></h2>
-      <p>Del concepto de marca a un sitio publicado: diseño, contenido y puesta en producción para negocios reales.</p>
+      <p>Del concepto de marca a un sitio publicado: diseño, contenido y puesta en producción para negocios reales. Podés recorrer los dos sitios reales sin salir de esta página.</p>
     </div>
-    <div class="project-grid">
-      <div class="project-card reveal">
-        <div class="project-logo"><img src="images/logo-cosmeticos-lanus.png" alt="Cosméticos Lanús" width="300" height="300" loading="lazy"></div>
-        <h3>Cosméticos Lanús</h3>
-        <p>Sitio para tienda de perfumes, cremas y lencería: catálogo visual y contacto directo, pensados para convertir visitas en consultas.</p>
-        <span class="project-tag">Diseño &amp; desarrollo web</span>
-        <a class="project-link" href="https://cosmeticoslanus.netlify.app/" target="_blank" rel="noopener">
-          Ver sitio
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
-        </a>
+    <div class="project-showcase">
+      <div class="ps-item reveal">
+        <div class="site-preview">
+          <div class="site-bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="site-url">cosmeticoslanus.netlify.app</span>
+            <a class="site-expand" href="https://cosmeticoslanus.netlify.app/" target="_blank" rel="noopener" aria-label="Abrir Cosméticos Lanús en una pestaña nueva">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+          <div class="site-frame">
+            <iframe src="https://cosmeticoslanus.netlify.app/" title="Sitio web de Cosméticos Lanús, diseñado y desarrollado por Valeria Belén Ortiz" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
+          </div>
+        </div>
+        <div class="ps-copy">
+          <div class="project-logo"><img src="images/logo-cosmeticos-lanus.png" alt="Cosméticos Lanús" width="300" height="300" loading="lazy"></div>
+          <h3>Cosméticos Lanús</h3>
+          <p>Sitio para tienda de perfumes, cremas y lencería: catálogo visual y contacto directo, pensados para convertir visitas en consultas.</p>
+          <span class="project-tag">Diseño &amp; desarrollo web</span>
+          <a class="project-link" href="https://cosmeticoslanus.netlify.app/" target="_blank" rel="noopener">
+            Abrir sitio completo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <p class="ps-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 0 1 4 0v5M13 8a2 2 0 0 1 4 0v3M17 10a2 2 0 0 1 4 0v4a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7V9a2 2 0 0 1 4 0"/></svg>
+            Navegá el sitio real desde este recuadro
+          </p>
+        </div>
       </div>
-      <div class="project-card reveal d2">
-        <div class="project-logo"><img src="images/logo-fp-campos.jpg" alt="Fabio Pirchio Inmuebles Rurales" width="236" height="420" loading="lazy"></div>
-        <h3>FP Campos y Haciendas</h3>
-        <p>Sitio para inmobiliaria rural especializada en compra y venta de hacienda, con estilo de marca propio.</p>
-        <span class="project-tag">Diseño &amp; desarrollo web</span>
-        <a class="project-link" href="https://fpcamposyhaciendas.netlify.app/" target="_blank" rel="noopener">
-          Ver sitio
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
-        </a>
+
+      <div class="ps-item reverse reveal">
+        <div class="site-preview">
+          <div class="site-bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="site-url">fpcamposyhaciendas.netlify.app</span>
+            <a class="site-expand" href="https://fpcamposyhaciendas.netlify.app/" target="_blank" rel="noopener" aria-label="Abrir FP Campos y Haciendas en una pestaña nueva">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+          <div class="site-frame">
+            <iframe src="https://fpcamposyhaciendas.netlify.app/" title="Sitio web de FP Campos y Haciendas, diseñado y desarrollado por Valeria Belén Ortiz" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"></iframe>
+          </div>
+        </div>
+        <div class="ps-copy">
+          <div class="project-logo"><img src="images/logo-fp-campos.jpg" alt="FP Campos y Haciendas" width="236" height="420" loading="lazy"></div>
+          <h3>FP Campos y Haciendas</h3>
+          <p>Sitio para inmobiliaria rural especializada en compra y venta de hacienda, con estilo de marca propio.</p>
+          <span class="project-tag">Diseño &amp; desarrollo web</span>
+          <a class="project-link" href="https://fpcamposyhaciendas.netlify.app/" target="_blank" rel="noopener">
+            Abrir sitio completo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
+          <p class="ps-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 0 1 4 0v5M13 8a2 2 0 0 1 4 0v3M17 10a2 2 0 0 1 4 0v4a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7V9a2 2 0 0 1 4 0"/></svg>
+            Navegá el sitio real desde este recuadro
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -1006,6 +1107,45 @@
   quoteDots.forEach(dot => {
     dot.addEventListener('click', () => showQuote(parseInt(dot.dataset.i, 10)));
   });
+
+  // prosa: nueva línea después de cada coma y de cada punto final de oración
+  (function(){
+    const ABBR = /(?:^|\s)(Sr|Sra|Srta|Dr|Dra|Lic|Prof|Ing|Arq|Cía|Av|etc|vs)\.$/i;
+    const sel = [
+      '.hero-sub', '.about-copy p', '.section-head p', '.format-card p',
+      '.ps-copy p', '.epigraph-card p', '.case-intro p', '.top-posts .sub',
+      '.exec-copy p', '.contact .lead', '.quote-slide p'
+    ].join(', ');
+    function breakTextNode(node){
+      const t = node.nodeValue;
+      if(!t || !/[,.]/.test(t)) return;
+      const frag = document.createDocumentFragment();
+      let buf = '';
+      for(let i = 0; i < t.length; i++){
+        const ch = t[i];
+        buf += ch;
+        if((ch === ',' || ch === '.') && /\s/.test(t[i + 1] || '')){
+          const prev = t[i - 1] || '';
+          const nextNonSpace = (t.slice(i + 1).match(/\S/) || [''])[0];
+          const insideNumber = /\d/.test(prev) && /\d/.test(nextNonSpace);
+          const isAbbrev = ABBR.test(buf);
+          if(!insideNumber && !isAbbrev){
+            let j = i + 1;
+            while(j < t.length && /\s/.test(t[j])) j++;
+            frag.appendChild(document.createTextNode(buf));
+            frag.appendChild(document.createElement('br'));
+            buf = '';
+            i = j - 1;
+          }
+        }
+      }
+      if(buf) frag.appendChild(document.createTextNode(buf));
+      node.parentNode.replaceChild(frag, node);
+    }
+    document.querySelectorAll(sel).forEach(el => {
+      Array.from(el.childNodes).forEach(n => { if(n.nodeType === 3) breakTextNode(n); });
+    });
+  })();
 </script>
 
 <a class="wa-float" href="https://wa.me/5491161199331" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://valeriabortizz.netlify.app/sitemap.xml
+Sitemap: https://valeriabortizz.com.ar/sitemap.xml

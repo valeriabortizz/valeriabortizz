@@ -387,6 +387,17 @@
 
   /* ---------- web projects ---------- */
   .projects{background:var(--cream);}
+  .projects .wrap{max-width:1360px;}
+  .domain-cta{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--maroon);color:var(--white);
+    text-decoration:none;font-weight:600;font-size:.9rem;
+    padding:14px 26px;border-radius:100px;
+    margin-top:24px;
+    transition:background .25s ease, transform .25s ease;
+  }
+  .domain-cta:hover{background:var(--rose-deep);transform:translateY(-2px);}
+  .domain-cta svg{width:16px;height:16px;}
   .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
   .project-card{
     background:var(--white);
@@ -442,7 +453,7 @@
 
   /* ---------- site showcase (interactive preview) ---------- */
   .project-showcase{display:flex;flex-direction:column;gap:44px;}
-  .ps-item{display:grid;grid-template-columns:1.45fr 1fr;gap:40px;align-items:center;}
+  .ps-item{display:grid;grid-template-columns:1.65fr 1fr;gap:40px;align-items:center;}
   .ps-item.reverse .site-preview{order:2;}
   .site-preview{
     border-radius:16px;overflow:hidden;border:1px solid var(--line);
@@ -822,6 +833,10 @@
       <div class="eyebrow"><span class="star"><svg viewBox="0 0 24 24"><path d="M12 1 L14 10 L23 12 L14 14 L12 23 L10 14 L1 12 L10 10 Z" fill="currentColor"/></svg></span>Proyectos web</div>
       <h2>Sitios que <span class="rose serif-italic">diseñó y desarrolló.</span></h2>
       <p>Del concepto de marca a un sitio publicado: diseño, contenido y puesta en producción para negocios reales. También acompaño a cada cliente en el proceso de conseguir su propio dominio (.com.ar), para que la marca tenga una dirección web propia y profesional. Podés recorrer los dos sitios reales sin salir de esta página.</p>
+      <a class="domain-cta" href="https://wa.me/5491161199331?text=Hola%20Valeria%2C%20quiero%20pedir%20una%20cotizaci%C3%B3n%20para%20conseguir%20mi%20dominio%20propio%20(.com.ar)" target="_blank" rel="noopener">
+        Pedir cotización de dominio propio
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+      </a>
     </div>
     <div class="project-showcase">
       <div class="ps-item reveal">

@@ -1005,7 +1005,11 @@
   .zur-post h4 { margin: 0 0 8px; font-size: 1.12rem; color: var(--zur-negro); }
   .zur-post p { font-size: .93rem; color: var(--zur-gris); line-height: 1.5; margin: 0 0 16px; }
   .zur-post span { margin-top: auto; font-weight: 600; color: var(--zur-naranja); font-size: .92rem; }
-  @media (max-width: 900px) { .zur-posts { grid-template-columns: 1fr; } }
+  .zur-posts { grid-template-columns: repeat(auto-fit, minmax(326px, 1fr)); align-items: start; }
+  .zur-posts .instagram-media { margin: 0 !important; width: 100% !important; min-width: 0 !important; max-width: 540px !important; }
+  .zur-posts blockquote.instagram-media { padding: 0; border: 0; background: none; }
+  .zur-posts blockquote .zur-post { height: 100%; }
+  @media (max-width: 400px) { .zur-posts { grid-template-columns: 1fr; } }
 
   /* Galería */
   .zur-galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
@@ -1149,24 +1153,30 @@
       <h3>Todo el Instagram de ZUR, desde el 28 de septiembre.</h3>
       <p class="zur-lead">Desde el posteo de Iara Lugo, capitana de la Primera femenina de Lanús Rugby Club, hasta hoy, todo el contenido de <strong>@zur.recovery</strong> es mi trabajo: posteos, historias y campañas con deportistas reales.</p>
       <div class="zur-posts">
-        <a class="zur-post" href="https://www.instagram.com/p/Dd1eVDayd1E/" target="_blank" rel="noopener">
-          <small>Rugby · 28/9</small>
-          <h4>Iara Lugo</h4>
-          <p>Capitana de la Primera femenina de Lanús Rugby Club: la recuperación también es parte del entrenamiento.</p>
-          <span>Ver posteo →</span>
-        </a>
-        <a class="zur-post" href="https://www.instagram.com/p/Dd9nYoevkaY/" target="_blank" rel="noopener">
-          <small>Running · 1/10</small>
-          <h4>Mau Klemenco</h4>
-          <p>Runner que eligió el circuito completo de ZUR antes de su carrera del domingo.</p>
-          <span>Ver posteo →</span>
-        </a>
-        <a class="zur-post" href="https://www.instagram.com/p/DeACT2KSW00/" target="_blank" rel="noopener">
-          <small>CrossFit · 2x1 Forja</small>
-          <h4>Ellos eligen ZUR</h4>
-          <p>Tres atletas de CrossFit y su método: hielo, sauna y presoterapia. «Entrenás fuerte, recuperate».</p>
-          <span>Ver posteo →</span>
-        </a>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Dd1eVDayd1E/" data-instgrm-version="14">
+          <a class="zur-post" href="https://www.instagram.com/p/Dd1eVDayd1E/" target="_blank" rel="noopener">
+            <small>Rugby · 28/9</small>
+            <h4>Iara Lugo</h4>
+            <p>Capitana de la Primera femenina de Lanús Rugby Club: la recuperación también es parte del entrenamiento.</p>
+            <span>Ver posteo →</span>
+          </a>
+        </blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Dd9nYoevkaY/" data-instgrm-version="14">
+          <a class="zur-post" href="https://www.instagram.com/p/Dd9nYoevkaY/" target="_blank" rel="noopener">
+            <small>Running · 1/10</small>
+            <h4>Mau Klemenco</h4>
+            <p>Runner que eligió el circuito completo de ZUR antes de su carrera del domingo.</p>
+            <span>Ver posteo →</span>
+          </a>
+        </blockquote>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DeACT2KSW00/" data-instgrm-version="14">
+          <a class="zur-post" href="https://www.instagram.com/p/DeACT2KSW00/" target="_blank" rel="noopener">
+            <small>CrossFit · 2x1 Forja</small>
+            <h4>Ellos eligen ZUR</h4>
+            <p>Tres atletas de CrossFit y su método: hielo, sauna y presoterapia. «Entrenás fuerte, recuperate».</p>
+            <span>Ver posteo →</span>
+          </a>
+        </blockquote>
       </div>
       <div class="zur-ig-links">
         <a class="zur-link" href="https://www.instagram.com/zur.recovery/" target="_blank" rel="noopener">Ver el perfil @zur.recovery →</a>
@@ -1175,6 +1185,7 @@
 
   </div>
 </section>
+<script async src="https://www.instagram.com/embed.js"></script>
 
 <section class="case" id="caso">
   <div class="wrap">

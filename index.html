@@ -978,9 +978,13 @@
   .zur-alianza.zur-proceso p { color: var(--zur-gris); }
 
   /* Campaña Luján */
-  .zur-lujan { background: #fff; border-radius: 18px; padding: 48px; border: 1px solid var(--zur-linea); }
+  .zur-lujan { background: #fff; border-radius: 18px; padding: 28px 32px; border: 1px solid var(--zur-linea); max-width: 860px; margin-left: auto; margin-right: auto; }
+  .zur-lujan .zur-dos { grid-template-columns: 1fr 180px; gap: 28px; }
+  .zur-lujan h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); }
+  .zur-lujan p { font-size: .95rem; margin-bottom: 10px; }
+  .zur-lujan .zur-cita { margin-top: 10px; }
   .zur-lujan-img { display: flex; justify-content: center; }
-  .zur-lujan-img img { max-height: 380px; width: auto; }
+  .zur-lujan-img img { max-height: 220px; width: auto; }
   .zur-tag { display: inline-block; font-size: .8rem; padding: 6px 12px; border-radius: 999px; background: var(--zur-naranja); color: #fff; margin: 0 6px 8px 0; }
   .zur-cita { border-left: 3px solid var(--zur-naranja); padding: 4px 0 4px 18px; font-style: italic; color: #444; margin-top: 18px; }
 
@@ -1021,7 +1025,9 @@
     .zur-datos, .zur-alianzas, .zur-galeria { grid-template-columns: 1fr; }
     .zur-galeria .zur-ancha { grid-column: span 1; }
     .zur-galeria img { height: 280px; }
-    .zur-lujan { padding: 28px 20px; }
+    .zur-lujan { padding: 24px 20px; }
+    .zur-lujan .zur-dos { grid-template-columns: 1fr; gap: 20px; }
+    .zur-lujan-img img { max-height: 180px; }
   }
 </style>
 

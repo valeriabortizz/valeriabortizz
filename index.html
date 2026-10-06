@@ -997,7 +997,15 @@
   .zur-link { display: inline-block; margin-top: 20px; color: var(--zur-naranja); font-weight: 600; text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
 
   /* Instagram */
-  .zur-ig-links { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+  .zur-ig-links { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 4px; }
+  .zur-posts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+  .zur-post { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--zur-linea); border-radius: 14px; padding: 24px 22px; text-decoration: none; color: inherit; transition: transform .2s ease, border-color .2s ease; }
+  .zur-post:hover, .zur-post:focus-visible { transform: translateY(-3px); border-color: var(--zur-naranja); }
+  .zur-post small { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--zur-naranja); font-weight: 600; margin-bottom: 10px; }
+  .zur-post h4 { margin: 0 0 8px; font-size: 1.12rem; color: var(--zur-negro); }
+  .zur-post p { font-size: .93rem; color: var(--zur-gris); line-height: 1.5; margin: 0 0 16px; }
+  .zur-post span { margin-top: auto; font-weight: 600; color: var(--zur-naranja); font-size: .92rem; }
+  @media (max-width: 900px) { .zur-posts { grid-template-columns: 1fr; } }
 
   /* Galería */
   .zur-galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
@@ -1140,8 +1148,27 @@
       <p class="zur-eyebrow">Contenido en redes</p>
       <h3>Todo el Instagram de ZUR, desde el 28 de septiembre.</h3>
       <p class="zur-lead">Desde el posteo de Iara Lugo, capitana de la Primera femenina de Lanús Rugby Club, hasta hoy, todo el contenido de <strong>@zur.recovery</strong> es mi trabajo: posteos, historias y campañas con deportistas reales.</p>
+      <div class="zur-posts">
+        <a class="zur-post" href="https://www.instagram.com/p/Dd1eVDayd1E/" target="_blank" rel="noopener">
+          <small>Rugby · 28/9</small>
+          <h4>Iara Lugo</h4>
+          <p>Capitana de la Primera femenina de Lanús Rugby Club: la recuperación también es parte del entrenamiento.</p>
+          <span>Ver posteo →</span>
+        </a>
+        <a class="zur-post" href="https://www.instagram.com/p/Dd9nYoevkaY/" target="_blank" rel="noopener">
+          <small>Running · 1/10</small>
+          <h4>Mau Klemenco</h4>
+          <p>Runner que eligió el circuito completo de ZUR antes de su carrera del domingo.</p>
+          <span>Ver posteo →</span>
+        </a>
+        <a class="zur-post" href="https://www.instagram.com/p/DeACT2KSW00/" target="_blank" rel="noopener">
+          <small>CrossFit · 2x1 Forja</small>
+          <h4>Ellos eligen ZUR</h4>
+          <p>Tres atletas de CrossFit y su método: hielo, sauna y presoterapia. «Entrenás fuerte, recuperate».</p>
+          <span>Ver posteo →</span>
+        </a>
+      </div>
       <div class="zur-ig-links">
-        <a class="zur-link" href="https://www.instagram.com/p/Dd1eVDayd1E/" target="_blank" rel="noopener">Ver el primer posteo →</a>
         <a class="zur-link" href="https://www.instagram.com/zur.recovery/" target="_blank" rel="noopener">Ver el perfil @zur.recovery →</a>
       </div>
     </div>
